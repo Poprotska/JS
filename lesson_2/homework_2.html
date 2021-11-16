@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // task 1
+
+    let time = +prompt('minutes');
+    if (time > 0 && time < 15)
+    { console.log('first quarter') }
+
+    else if (time >= 15 && time < 30)
+    { console.log('second quarter') }
+
+    else if (time >= 30 && time < 45)
+    { console.log('third quarter') }
+
+    else if (time >= 45 && time < 60)
+    { console.log('forth quarter') }
+
+    else { console.log('404') }
+
+
+    // task 2
+
+    let day = +prompt('day');
+    if (day > 0 && day <=11)
+    { console.log ('first decade') }
+
+    else if (day > 11 && day <=21)
+    { console.log ('second decade') }
+
+    else if (day > 21 && day <=31)
+    { console.log ('third decade') }
+
+    else { console.log ('404') }
+
+    // task 3
+    // test, якщо не дорівнює true -  'Вірно', дорівнює - 'Неправильно'.
+
+
+    let test = true; //Неправильно
+    if (test !== true)
+    { console.log('Вірно') }
+    else { console.log('Неправильно') }
+    // let test = 'test'; Вірно
+
+    // task 4
+
+    let a = +prompt('number');
+    if (a !== 0){console.log('Вірно')}
+    else {console.log('Невірно')}
+    // 0 - Невірно; -3 - Вірно ; 1 - Вірно ;
+
+    // task 5
+
+    let weekday = +prompt('weekday');
+    switch (weekday) {
+        case 1:
+            console.log('Mon: work hard n study hard');
+            break;
+        case 2:
+            console.log('Tue: work hard n study hard');
+            break;
+        case 3:
+            console.log('Wed: work hard n study hard');
+            break;
+        case 4:
+            console.log('Thu: work hard n study hard');
+            break;
+        case 5:
+            console.log('Fri: work hard n study hard');
+            break;
+        case 6:
+            console.log('Sat: visit dentist, do errands, do the girly stuff and all the stuff you failed to do during the week, see your family and friends');
+            break;
+        case 7:
+            console.log('Sun: sleep a bit, cry a bit n study');
+            break;
+    }
+
+    // task 6
+
+     let year = +prompt('year');
+
+     if(year % 4 === 0) { console.log('Високосний') }
+     else {console.log('Невисокосний') }
+
+     // task 7
+
+    let js = prompt('Яка «офіційна» назва JavaScript?');
+    if (js === 'ECMAScript')
+        { console.log ('Правильно!') }
+    else{ console.log ('Не знаєте? ECMAScript!') }
+
+
+</script>
+
+</body>
+</html>
