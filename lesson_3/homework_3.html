@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // task 1
+
+  let num = [1, 2, 3, 4, 5];
+  let text = ['one', 'two', 'three', 'four', 'five'];
+  let all = [true, false, 'six', 7, 8];
+  console.log(num);
+  console.log(text);
+  console.log(all);
+
+  // task 2
+
+  let array = [];
+  array[0] = '1';
+  array[1] = '2';
+  array[2] = '3';
+  console.log(array);
+
+  // task 3
+
+  for (let a = 0; a < 10; a++) {
+      document.write(`<div>default text A</div>`);
+  }
+
+  for (let b = 0; b < 10; b++) {
+      document.write(`<div>${b}default text B</div>`);
+  }
+
+  let c = 0;
+  while(c<10){
+      document.write(`<h1>default text C </h1>`);
+      c++;
+  }
+
+  let d =0;
+  while(d<10){
+      document.write(`<h1>${d} default text D </h1>`);
+      d++;
+  }
+
+  // task 4
+
+  let numbers = [1,2,3,4,5,6,7,8,9,10];
+  for (n = 0; n < numbers.length; n++) {
+      console.log(numbers[n])
+  }
+
+  let string = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+  for (s = 0; s < string.length; s++) {
+      console.log(string[s])
+  }
+
+  let todos = [false, true, 'one', 'two', 'three', 4,5,6, 'seven', 8];
+  for (t= 0; t < todos.length; t++) {
+      console.log(todos[t])
+  }
+
+  for (x = 0; x < todos.length; x++) {
+    if (typeof todos[x] === 'boolean') {
+      console.log(todos[x]);
+    }
+  }
+
+  for (y = 0; y < todos.length; y++) {
+      if (typeof todos[y] === 'number') {
+        console.log(todos[y]);
+      }
+  }
+
+  for (z = 0; z < todos.length; z++) {
+      if (typeof todos[z] === 'string') {
+          console.log(todos[z]);
+      }
+  }
+
+  // task 5
+
+  let empty = [];
+  empty[0] = false;
+  empty[1] = true;
+  empty[2] = 1;
+  empty[3] = 2;
+  empty[4] = 3;
+  empty[5] = 'q';
+  empty[6] = 'w';
+  empty[7] = 'e';
+  empty[8] = 'r';
+  empty[9] = 10;
+
+  for (let e = 0; e < empty.length; e++) {
+      console.log(empty[e]);
+  }
+
+  for (let q = 0; q < 10; q++) {
+      console.log(q);
+      document.write(q + ' ');
+  }
+
+  for (let w = 0; w < 100; w++) {
+      console.log(w);
+      document.write(w + ' ');
+  }
+
+  for (let l = 0; l < 100; l+=2) {
+      console.log(l);
+      document.write(l + ' ');
+  }
+
+  for (let k = 0; k < 100; k++) {
+      if(k % 2 === 0){
+          console.log(k);
+          document.write(k + ' ');
+      }
+  }
+
+  for (let g = 0; g < 100; g++) {
+      if(g % 2 === 1){
+          console.log(g + ' ');
+          document.write(g + ' ');
+      }
+  }
+
+</script>
+
+</body>
+</html>
