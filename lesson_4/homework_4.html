@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // task 1
+
+  function recArea (a, b) {
+    let rec = a * b;
+    return rec;
+  }
+  console.log(recArea (2, 3))
+
+  // task 2
+
+  function cirArea (radius) {
+    let cirArea = 3.14 * (radius **2);
+    return cirArea;
+  }
+
+  console.log(cirArea (10))
+
+  // task 3 S=2πRH
+
+  function cylArea (r, h) {
+    let cylArea = 2 * 3.14 * r * h;
+    return cylArea;
+  }
+
+  console.log(cylArea (10,10))
+
+  // task 4
+
+  let mass = [1,2,3, 'four', 'five', true];
+  function element  (mass) {
+    for (let el = 0; el < mass.length; el++) {
+      document.write(mass[el])
+    }
+  }
+  element(mass)
+
+  // task 5
+
+  function paragraph (text) {
+    for (let t = 0; t <=10; t++) {
+      console.log(`<p>${t} - ${text}</p>`)
+    }
+  }
+  paragraph('text')
+
+  // task 6
+
+  function file(list) {
+    console.log(`<ul>`)
+    console.log(`<li>${list}</li>`)
+    console.log(`<li>${list}</li>`)
+    console.log(`<li>${list}</li>`)
+    console.log(`</ul>`)
+  }
+  file('list');
+
+  // task 7
+
+  function doc(body, number) {
+      document.write(`<ul>`)
+      for (let n = 0; n < number; n++) {
+          document.write(`<li>${body}</li>`);
+      }
+      document.write(`</ul>`)
+  }
+  doc('body', 3);
+
+  // task 8
+
+  let array = [1,'two', true];
+  function elem (array){
+      document.write(`<ul>`)
+          for (let e = 0; e < array.length; e++) {
+              document.write(`<li>${array[e]}</li>`);
+          }
+      document.write(`</ul>`)
+  }
+  elem(array);
+
+  // task 10
+
+   let person = [{id: 1, name: 'Vasya', age: 18}, {id: 2, name: 'Petya', age: 33}, {id: 3, name: 'Kolya', age: 24}];
+   function object(category) {
+     for (const cat of category) {
+       document.write(`<div>${cat.id}.${cat.name} - ${cat.age}</div>`);
+     }
+   }
+   object(person);
+
+</script>
+
+</body>
+</html>
