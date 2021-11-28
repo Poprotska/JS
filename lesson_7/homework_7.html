@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // task 1
+
+    function User(id, name, surname, email, phone) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    let array = [
+        new User(1, 'Gayle', 'Evans', 'a@gmail.com', 8883178888),
+        new User(2, 'Elizabeth', 'Marshall', 'b@gmail.com', 8883178889),
+        new User(3, 'Martha', 'Quinn', 'c@gmail.com', 8883178880),
+        new User(4, 'Helen', 'Henry', 'd@gmail.com', 8883178887),
+        new User(5, 'Daniel', 'Barnes', 'h@gmail.com', 8883178886),
+        new User(6, 'Pamela', 'Jones', 'g@gmail.com', 8883178885),
+        new User(7, 'Jorge', 'Wilkins', 'k@gmail.com', 8883178884),
+        new User(8, 'Rita', 'Simon', 'l@gmail.com', 8883178883),
+        new User(9, 'Andrew', 'Gordan', 'z@gmail.com', 8883178882),
+        new User(10, 'Luis', 'Carlson', 'x@gmail.com', 8883178881)
+    ];
+    console.log(array);
+
+    // залишити тільки обєкти з парними id (filter)
+
+    let filter = array.filter((item) => {
+        return item.id % 2 === 0;
+        });
+    console.log(filter);
+
+    // відсортувати його по id. по зростанню (sort)
+
+    console.log(array.sort((a, b) => a.id - b.id));
+
+    // task 2
+
+    class Client {
+        constructor(id, name, surname, email, phone, order) {
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.phone = phone;
+            this.order = order;
+        }
+    }
+
+    let customer = [
+        new Client(11, 'Gayle', 'Evans', 'a@gmail.com', 8883178888, ['toy', 'game']),
+        new Client(12, 'Elizabeth', 'Marshall', 'b@gmail.com', 8883178889, ['puzzle']),
+        new Client(13, 'Martha', 'Quinn', 'c@gmail.com', 8883178880, ['other']),
+        new Client(14, 'Helen', 'Henry', 'd@gmail.com', 8883178887, ['gift', 'card', 'map']),
+        new Client(15, 'Daniel', 'Barnes', 'h@gmail.com', 8883178886, ['pencil', 'book']),
+        new Client(16, 'Pamela', 'Jones', 'g@gmail.com', 8883178885, ['box', 'game', 'car', 'doll']),
+        new Client(17, 'Jorge', 'Wilkins', 'k@gmail.com', 8883178884, ['toy', 'map']),
+        new Client(18, 'Rita', 'Simon', 'l@gmail.com', 8883178883, ['paint', 'paper']),
+        new Client(19, 'Andrew', 'Gordan', 'z@gmail.com', 8883178882, ['other']),
+        new Client(20, 'Luis', 'Carlson', 'x@gmail.com', 8883178881, ['magazine']),
+    ];
+    console.log(customer);
+
+    let orders = customer.sort((a, b) => a.order.length - b.order.length);
+    console.log(orders)
+
+</script>
+</body>
+</html>
