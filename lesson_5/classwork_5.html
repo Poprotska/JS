@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // task 1
+
+  let min = (q, w, e) => {
+    if (q < w && q < e) {
+      console.log(q);
+    } else if (w < q && w < e) {
+      console.log(w);
+    } else {
+      console.log(e);
+    }
+  }
+  min(5,2,9);
+
+  // task 2
+
+  let max = (q, w, e) => {
+    if (q > w && q > e) {
+      console.log(q);
+    } else if ( w > q && w > e) {
+      console.log(w);
+    } else {
+      console.log(e)
+    }
+  }
+
+  max(10,13,18)
+
+  // task 3
+
+  let maxArray = [5,9,20,1,18]
+  let arrayMax = (array) => {
+    let max = array[0];
+    for (const element of array) {
+      if(element > max){
+        max = element;
+      }
+    }
+    return max;
+  }
+  console.log(arrayMax(maxArray))
+
+  // task 4
+
+  let minArray = [7,9,6,2,3]
+  let arrayMin = (array) => {
+    let min = array [0];
+    for (const element of array) {
+      if (element < min) {
+        min = element;
+      }
+    }
+    return min;
+  }; console.log(arrayMin(minArray))
+
+  // task 5
+
+  let calc = [1,2,10];
+  let sumUp = (array) => {
+    let sum = 0;
+    for (const element of array) {
+      sum = element + sum;
+    }
+    return sum;
+  }; console.log(sumUp(calc))
+
+  // task 6
+
+  let arithmetic = [4,6,2];
+  let mean = (array) => {
+    let sum = 0;
+    for (const element of array) {
+      sum += element;
+    }
+    return sum/array.length;
+  }; console.log(mean(arithmetic))
+
+  // task 7
+
+  const minMax = (...arguments) => {
+    let min = arguments[0];
+    let max = arguments[0];
+    for (const element of arguments) {
+      if (element > max) {
+        max = element;
+      }
+      if (element < min) {
+        min = element;
+      }
+    } console.log(max);
+    return min;
+  }; console.log (minMax(3, 6, 33, 66, 333))
+
+  // task 8
+
+  let random = (length) => {
+    let array = [];
+    for (let i = 0; i < length; i++){
+      array.push(Math.floor(Math.random()*100));
+    } return array
+  }; console.log(random(10))
+
+  // task 9
+
+  let limitArray = (length,limit) => {
+    let array = [];
+    for (let i = 0; i < length; i++) {
+      array.push(Math.round(Math.random()*limit));
+    } return array;
+  }; console.log(limitArray(10,100));
+
+  // task 10
+
+  let array = [1, 2, 3]
+  let revArray = (reverse) => {
+      let newArr = [];
+      for (let i = reverse.length - 1, r = 0; i >= 0; i--, r++) {
+          newArr[r] = reverse[i];
+      } return newArr;
+  }; console.log(revArray(array));
+
+</script>
+</body>
+</html>
