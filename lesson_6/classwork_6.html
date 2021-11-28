@@ -1,10 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<script>
+
+    // task 1
+
+    let n1 = 'Harry..Potter';
+    let n2 = 'Ron---Whisley';
+    let n3 = 'Hermione__Granger';
+
+    let name = (string, symbol) => {
+        let array = [];
+        if (string.includes(symbol)) {
+            let a = string.split(symbol)
+            a.forEach((item) => {
+                if (item) array.push(item);
+            }); console.log(array.join(' '))
+        }
+    }
+    name(n1, '.');
+    name(n2, '-');
+    name(n3, '_');
+
+    // task 2
+
+    let randomizer = (length, number) => {
+        let array = [];
+        for (let i = 0; i < length; i++) {
+            array.push(Math.floor(Math.random() * number));
+        } return array;
+    }; console.log( randomizer(3, 100));
+
+    // task 3
+
+    let sort = (length, number) => {
+        let array = [];
+        for (let i = 0; i < length; i++) {
+            array.push(Math.floor(Math.random() * number));
+        }
+        return array.sort((a, b) => a - b);
+    };
+    console.log(sort(8, 100));
+
+    // task 4
+
+    let filter = (length, number) => {
+        let array = [];
+        for (let i = 0; i < length; i++) {
+            array.push(Math.floor(Math.random() * number));
+        }
+        return array.filter(value => value % 2 === 0);
+    };
+    console.log(filter(4, 44));
+
+    // task 5
+
+    let random = (length, number) => {
+        let array = [];
+        for (let i = 0; i < length; i++) {
+            array.push(Math.floor(Math.random() * number));
+        }
+        return array.map(value => value.toString());
+    };
+    console.log(random(5, 100));
+
+    // task 6
+    // ascending  [3,11,21]
+    // descending [21,11,3]
+
+    let sortNums = (array, direction) => {
+        if (direction === 'asc') return array.sort((a, b) => a - b);
+        if (direction === 'desc') return array.sort((a, b) => b - a);
+    };
+    console.log(sortNums([8, 64, 55, 13, 9, -5], 'desc') );
+
+    // task 7
+
+    let coursesAndDurationArray = [
+        {title: 'JavaScript Complex', monthDuration: 5},
+        {title: 'Java Complex', monthDuration: 6},
+        {title: 'Python Complex', monthDuration: 6},
+        {title: 'QA Complex', monthDuration: 4},
+        {title: 'FullStack', monthDuration: 7},
+        {title: 'Frontend', monthDuration: 4}
+    ];
+
+    let desc = coursesAndDurationArray.sort((a, b) => b.monthDuration - a.monthDuration);
+    console.log(desc);
+
+    let duration = coursesAndDurationArray.filter((index) => {
+        return index.monthDuration > 5;
+    });
+    console.log(duration)
+
+</script>
 
 </body>
 </html>
