@@ -73,14 +73,16 @@
         let element = document.createElement('div');
         element.classList.add('item');
 
-        let header = document.createElement('h1');
-        header.innerText = coursesArray.title;
+        let heading = document.createElement('h1');
+        heading.innerText = coursesArray.title;
+        heading.classList.add('heading');
 
-        let p = document.createElement('p');
-        p.innerText = coursesArray.monthDuration;
+        let description = document.createElement('p');
+        description.innerText = coursesArray.monthDuration;
+        description.classList.add('description');
 
-        element.appendChild(header);
-        element.appendChild(p);
+        element.appendChild(heading);
+        element.appendChild(description);
         document.body.appendChild(element);
     }
 
