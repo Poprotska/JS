@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form name="sheets">
+    <input type="number" name="rows">
+    <input type="number" name="columns">
+    <input type="text" name="content">
+    <button>X</button>
+</form>
+
+<script>
+
+    // створити 2 форми по 2 інпути в кожній.
+    // створити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
+    // Кнопка повинна лежати за межами форм (Щоб уникнути перезавантаження сторінки)
+    // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+
+    // let blockA = document.createElement('div');
+    // blockA.innerText = 'Passenger A';
+    // document.body.appendChild(blockA);
+    //
+    // let blockB = document.createElement('div');
+    // blockB.innerText = 'Passenger B';
+    // document.body.appendChild(blockB);
+    //
+    // let formA = document.createElement('form');
+    // formA.setAttribute('name', 'formA');
+    // blockA.appendChild(formA);
+    //
+    // let formB = document.createElement('form');
+    // formB.setAttribute('name', 'formB');
+    // blockB.appendChild(formB);
+    //
+    // let nameA = document.createElement('input');
+    // nameA.setAttribute('name', 'nameA');
+    //
+    // let surnameA = document.createElement('input');
+    // surnameA.setAttribute('name', 'surnameA');
+    //
+    // let nameB = document.createElement('input');
+    // nameB.setAttribute('name', 'nameB');
+    //
+    // let surnameB = document.createElement('input');
+    // surnameB.setAttribute('name', 'surnameB');
+    //
+    // let button = document.createElement('button');
+    // button.innerText = 'button';
+    //
+    // document.body.appendChild(button);
+    //
+    // formA.append(nameA,surnameA);
+    // formB.append(nameB,surnameB);
+    //
+    // button.addEventListener('click', function (){
+    //     console.log(document.forms.formA.nameA.value);
+    //     console.log(document.forms.formA.surnameA.value);
+    //     console.log(document.forms.formB.nameB.value);
+    //     console.log(document.forms.formB.surnameB.value);
+    // })
+
+    // Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+
+    // let form = document.forms ['sheets']
+    // form.onsubmit = function (i) {
+    //     i.preventDefault();
+    //     let rows = +form.rows.value;
+    //     let columns = +form.columns.value;
+    //     let content = form.content.value;
+    //
+    //     let table = document.createElement('table');
+    //     document.body.appendChild(table)
+    //
+    //     for (let i = 0; i < rows; i++) {
+    //         let tr = document.createElement('tr');
+    //         for (let j = 0; j < columns; j++) {
+    //             let td = document.createElement('td');
+    //             tr.appendChild(td);
+    //             td.innerText = content;
+    //         }
+    //         table.appendChild(tr)
+    //     }
+    // }
+
+    //  Сворити масив не цензцрних слів. Сворити інпут текстового типу.
+    //  Якщо людина вводить слово і воно міститься в масиві не цензурних слів кинути алерт з попередженням.
+    //  Перевірку робити при натисканні на кнопку
+
+    // let words = ['fuck', 'butt'];
+    // let textForm = document.createElement('input');
+    // let saintButton = document.createElement('button');
+    // saintButton.innerText = 'check';
+    // document.body.append(textForm, saintButton);
+    //
+    // saintButton.addEventListener('click', function () {
+    //     let text = textForm.value;
+    //     for (let w of words) {
+    //         if (w === text) {
+    //             alert('bad boy!');
+    //         }
+    //     }
+    // })
+
+</script>
+
+</body>
+</html>
