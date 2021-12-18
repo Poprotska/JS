@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--task 1-->
+
+<form name="user">
+    <label>Name:
+        <input name="name" type="text"/>
+    </label>
+    <label>Age:
+        <input name="age" type="number"/>
+    </label>
+    <button id="button">Submit</button>
+</form>
+
+<!-- task 2-->
+<hr>
+
+<form name="car">
+    <label>Model:
+        <input name="model" type="text"/>
+    </label>
+    <label>Type:
+        <input name="type" type="text"/>
+    </label>
+    <label>Volume:
+        <input name="volume" type="number"/>
+    </label>
+    <button id="btnCar">Submit</button>
+</form>
+
+<script>
+
+    // task 1 створити форму з інпутами для name та age.
+    // При відправці форми записати об'єкт в localstorage
+
+    let name = document.forms.user.name;
+    let age = document.forms.user.age;
+    let button = document.getElementById('button');
+
+    let form = (userName, userAge) => {
+        let user = {
+            name: userName,
+            age: userAge,
+        };
+        localStorage.setItem(form, JSON.stringify(user));
+    };
+    button.onclick = () => {
+        form(name.value, age.value);
+    }
+
+    // task 2 створити форму з інпутами для model,type та volume автівки.
+    // при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
+
+    let model = document.forms.car.model;
+    let type = document.forms.car.type;
+    let volume = document.forms.car.volume;
+    let btnCar = document.getElementById('btnCar');
+
+    let carForm = (modelCar, typeCar, volumeCar) => {
+        let form = JSON.parse(localStorage.getItem(carForm)) || [];
+        form.push({modelCar, typeCar, volumeCar});
+        localStorage.setItem(carForm, JSON.stringify(form));
+    };
+    btnCar.onclick = () => {
+        carForm(model.value, type.value, volume.value);
+    };
+
+</script>
+
+</body>
+</html>
