@@ -60,18 +60,16 @@
     // task 2 створити форму з інпутами для model,type та volume автівки.
     // при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
 
-    let model = document.forms.car.model;
-    let type = document.forms.car.type;
-    let volume = document.forms.car.volume;
-    let btnCar = document.getElementById('btnCar');
-
-    let carForm = (modelCar, typeCar, volumeCar) => {
-        let form = JSON.parse(localStorage.getItem(carForm)) || [];
-        form.push({modelCar, typeCar, volumeCar});
-        localStorage.setItem(carForm, JSON.stringify(form));
-    };
-    btnCar.onclick = () => {
-        carForm(model.value, type.value, volume.value);
+    let car = document.forms.car;
+    car.onsubmit = function (e) {
+        e.preventDefault();
+        let model = this.model.value;
+        let type = this.type.value;
+        let volume = this.volume.value;
+        let carForm = {model: model, type: type, volume: volume};
+        let form = JSON.parse(localStorage.getItem('form')) || [];
+        form.push(carForm);
+        localStorage.setItem('form', JSON.stringify(form));
     };
 
 </script>
