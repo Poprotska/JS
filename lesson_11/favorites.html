@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="./classwork_11.html">Back to the list</a>
+<script>
+   let favorites = JSON.parse (localStorage.getItem('favorites'));
+   console.log(favorites);
+   for (let favorite of favorites) {
+       let item = document.createElement('div');
+       item.innerText = JSON.stringify(favorite);
+       document.body.appendChild(item);
+   }
+</script>
+</body>
+</html>
