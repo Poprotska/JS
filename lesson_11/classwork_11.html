@@ -37,10 +37,11 @@
             let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
             favorites.push(user);
             localStorage.setItem('favorites', JSON.stringify(favorites));
-        };
-        userDiv.appendChild(btn);
+        }; userDiv.appendChild(btn);
         document.body.appendChild(userDiv);
     }
+
 </script>
+
 </body>
 </html>
