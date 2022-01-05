@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            width: 1200px;
+            text-align: center;
+        }
+
+        .button_title {
+            padding: 10px 0;
+            margin: 10px 50px 30px;
+            width: 90%;
+            border-radius: 3px;
+            border: gray;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        .button_item {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            width: 15%;
+            margin: 30px 5px 10px;
+            padding: 10px;
+            border: 2px solid dodgerblue;
+        }
+
+        .button_body {
+            height: 80px;
+        }
+
+        .button_post {
+            align-self: end;
+            border-radius: 4px;
+            border: 2px solid dodgerblue;
+        }
+
+
+    </style>
+
 </head>
 <body>
-<div class="posts"></div>
+<div class="details"></div>
 <script>
 
     // 4 Вывести всю, без исключения, информацию про объект
@@ -15,56 +57,63 @@
     // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
     // которая имеет детальную информацию про текущий пост.
 
-    let details = JSON.parse (localStorage.getItem('userDetails'));
+    let details = JSON.parse(localStorage.getItem('userDetails'));
     console.log(details);
+
     for (let detail of details) {
         let id = document.createElement('div');
-        id.innerText = `ID - ${detail.id}`;
+        id.innerText = `ID : ${detail.id}`;
 
         let name = document.createElement('div');
-        name.innerText = detail.name;
+        name.innerText = `Name : ${detail.name}`;
 
         let username = document.createElement('div');
-        username.innerText = detail.username;
+        username.innerText = `Username : ${detail.username}`;
 
         let email = document.createElement('div');
-        email.innerText = detail.email;
+        email.innerText = `Email : ${detail.email}`;
 
         let address = document.createElement('div');
-        address.innerText = `${detail.address.street} \n ${detail.address.suite}
-        \n ${detail.address.city} \n ${detail.address.zipcode}
-        \n ${detail.address.geo.lat} ${detail.address.geo.lng}`;
+        address.innerText = `\n ADDRESS: \n Street : ${detail.address.street} \n Suite : ${detail.address.suite} \n City : ${detail.address.city} \n Zipcode : ${detail.address.zipcode} \n ${detail.address.geo.lat} ${detail.address.geo.lng}`;
 
         let phone = document.createElement('div');
-        phone.innerText = detail.phone;
+        phone.innerText = `Phone : ${detail.phone}`;
 
         let website = document.createElement('div');
-        website.innerText = detail.website;
+        website.innerText = `Website : ${detail.website}`;
 
         let company = document.createElement('div');
-        company.innerText = `${detail.company.name} \n ${detail.company.catchPhrase}
-        \n ${detail.company.bs}`;
+        company.innerText = `\n COMPANY: \n Name: ${detail.company.name} \n Catch Phrase: ${detail.company.catchPhrase} \n bs: ${detail.company.bs}`;
 
         let button = document.createElement('button');
         button.innerText = 'post of current user';
+        button.classList.add('button_title');
         button.onclick = function () {
             fetch(`https://jsonplaceholder.typicode.com/users/${detail.id}/posts`)
                 .then(value => value.json())
                 .then(value => {
-                    // let titles = document.createElement('div');
                     for (let title of value) {
+                        let div = document.createElement('div');
+                        div.classList.add('button_item');
+
                         let item = document.createElement('div')
                         item.innerText = title.title;
+                        item.classList.add('button_body');
+
 
                         let postButton = document.createElement('button');
-                        postButton.innerText = `submit`;
+                        postButton.innerText = `see more`;
+                        postButton.classList.add('button_post');
                         postButton.onclick = function () {
                             let postDetails = JSON.parse(localStorage.getItem('postDetails')) || [];
                             postDetails.push(`${title.id}`);
                             localStorage.setItem('postDetails', JSON.stringify(postDetails));
                             location.href = `post-details.html`;
                         }
-                        button.append(item, postButton);
+
+                        div.append(item, postButton)
+
+                        button.appendChild(div)
                     }
                 })
         };

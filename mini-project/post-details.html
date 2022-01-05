@@ -3,6 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            display: flex;
+            width: 1200px;
+        }
+
+        .comment_div {
+            flex-wrap: wrap;
+            width: 22%;
+            margin: 10px 5px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid dodgerblue;
+        }
+
+        .body {
+            background-color: lightpink;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+    </style>
 </head>
 <body>
 <script>
@@ -20,6 +43,9 @@
         .then(value => value.json())
         .then(value => {
             for (let comment of value) {
+                let div = document.createElement('div');
+                div.classList.add('comment_div');
+
                 let postId = document.createElement('div');
                 postId.innerText = `Post ID : ${comment.postId}`;
 
@@ -33,9 +59,12 @@
                 email.innerText = `Email : ${comment.email}`;
 
                 let body = document.createElement('div');
-                body.innerText = comment.body;
+                body.innerText = `Body : ${comment.body}`;
+                body.classList.add('body')
 
-                document.body.append(postId, id, name, email, body);
+                div.append(postId, id, name, email, body);
+
+                document.body.appendChild(div)
             }
         })
 
