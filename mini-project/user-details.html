@@ -10,11 +10,11 @@
         }
 
         .button_title {
+            background-color: navajowhite;
             padding: 10px 0;
             margin: 10px 50px 30px;
             width: 90%;
-            border-radius: 3px;
-            border: gray;
+            border-radius: 10px;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
@@ -29,7 +29,9 @@
             width: 15%;
             margin: 30px 5px 10px;
             padding: 10px;
-            border: 2px solid dodgerblue;
+            border: 2px solid darkorange;
+            border-radius: 8px;
+            background-color: papayawhip;
         }
 
         .button_body {
@@ -37,12 +39,11 @@
         }
 
         .button_post {
-            align-self: end;
             border-radius: 4px;
-            border: 2px solid dodgerblue;
+            border: 2px solid darkorange;
+            background-color: darkorange;
+            color: white;
         }
-
-
     </style>
 
 </head>
@@ -86,7 +87,7 @@
         company.innerText = `\n COMPANY: \n Name: ${detail.company.name} \n Catch Phrase: ${detail.company.catchPhrase} \n bs: ${detail.company.bs}`;
 
         let button = document.createElement('button');
-        button.innerText = 'post of current user';
+        button.innerText = 'Post of current user';
         button.classList.add('button_title');
         button.onclick = function () {
             fetch(`https://jsonplaceholder.typicode.com/users/${detail.id}/posts`)
